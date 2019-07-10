@@ -1,0 +1,9 @@
+{
+    "Demon": {
+        "min": "",
+        "max": "",
+        "desc": "Demons have a chance on-hit to deplete the target's current mana and deal true damage equal to the mana depleted.",
+        "ranks": {},
+        "icon": ""
+    }
+}

@@ -1,0 +1,12 @@
+.container {
+  margin: 0.75rem 0.75rem 0.75rem 0;
+}
+
+.champGroupContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.champImage {
+  width: 46px;
+}

@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+}
+
+.originGroups {
+  flex: 1;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.classGroups {
+  flex: 1;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.buffGroups {
+  flex: 1;
+}
