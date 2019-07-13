@@ -36,7 +36,8 @@
   align-items: center;
 }
 
-.buffName {
+.buffName,
+.totals {
   margin-left: 0.5rem;
 }
 

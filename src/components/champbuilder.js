@@ -114,14 +114,15 @@ const ChampBuilder = () => {
 
   function getPossibleBuffs(toSearch) {
     const pBuffs = []
-    for (var [key] of toSearch.entries()) {
+    for (var [key, value] of toSearch.entries()) {
       const buff = synergies[key]
       pBuffs.push({
         name: key,
         icon: buff.icon,
-        times: 1,
+        total: value,
         desc: buff.desc,
         rank: "",
+        max: buff.max
       })
     }
     return pBuffs
@@ -138,19 +139,21 @@ const ChampBuilder = () => {
           buffs.push({
             name: key,
             icon: buff.icon,
-            times: 1,
+            total: value,
             desc: buff.desc,
             rank: buff.ranks[buffMax],
+            max: buff.max
           })
         }
-        if (key === 'Ninja') {
+        if (key === "Ninja") {
           if (value === 4) {
             buffs.push({
               name: key,
               icon: buff.icon,
-              times: 1,
+              total: value,
               desc: buff.desc,
               rank: buff.ranks[buffMax],
+              max: buff.max
             })
           }
         }
@@ -225,6 +228,7 @@ const ChampBuilder = () => {
                   <Image src={b.icon}></Image>
                 </div>
                 <div className={champbuilderStyles.buffName}>{b.name}</div>
+                <div className={champbuilderStyles.totals}>({b.total} / {b.max})</div>
               </div>
               {/* <div className={champbuilderStyles.desc}>{b.desc}</div> */}
             </div>
@@ -236,6 +240,7 @@ const ChampBuilder = () => {
                   <Image src={b.icon}></Image>
                 </div>
                 <div className={champbuilderStyles.buffName}>{b.name}</div>
+                <div className={champbuilderStyles.totals}>({b.total} / {b.max})</div>
               </div>
               {/* <div className={champbuilderStyles.desc}>{b.desc}</div> */}
             </div>
