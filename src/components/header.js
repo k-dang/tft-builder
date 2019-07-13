@@ -1,11 +1,10 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#1c2938`,
     }}
   >
     <div
@@ -13,18 +12,25 @@ const Header = ({ siteTitle }) => (
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
+        display: `flex`,
+        alignItems: `center`,
+        justifyContent: `center`
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+      <img
+        style={{
+          width: 48,
+        }}
+        src={"upside-down-smiley.svg"}
+        alt="upside down smiley"
+      ></img>
+      <h1
+        style={{
+          margin: `0 0 0 0.4rem`,
+          color: `#91D2FA`,
+        }}
+      >
+        {siteTitle}
       </h1>
     </div>
   </header>

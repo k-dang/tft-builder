@@ -10,3 +10,8 @@
 .champImage {
   width: 46px;
 }
+
+.champImage:hover {
+  filter: brightness(150%);
+  cursor: pointer;
+}

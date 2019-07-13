@@ -34,19 +34,20 @@ def generateSynergies(soup):
 
     for table in tables:
         table_rows = table.find_all("tr")
-        origin_name = table_rows[0]
-        origin_desc = table_rows[1]
-        desc = origin_desc.td.get_text().split('\n')
-        synergies[origin_name.span.get("data-param")] = {
-            'min': '',
-            'max': '',
-            'desc': desc[0],
-            'ranks': {},
-            'icon': '',
-        }
-        # print(origin_name.span.get("data-param"))
-        # print(origin_desc.td.get_text().split('\n'))
-        break
+        if table_rows:
+            origin_name = table_rows[0]
+            origin_desc = table_rows[1]
+            desc = origin_desc.td.get_text().split('\n')
+            synergies[origin_name.span.get("data-param")] = {
+                'min': '',
+                'max': '',
+                'desc': desc[0],
+                'ranks': {},
+                'icon': '',
+            }
+            # print(origin_name.span.get("data-param"))
+            # print(origin_desc.td.get_text().split('\n'))
+
 
     with open('json/synergies.json', 'w') as f:
         f.write(json.dumps(synergies, indent=4))
@@ -87,6 +88,18 @@ def generateChampJson(soup):
     with open('json/champs.json', 'w') as f:
         f.write(json.dumps(champs, indent=4))
 
+def downloadSynergyImages():
+    r = requests.get('https://na.leagueoflegends.com/en/news/game-updates/gameplay/teamfight-tactics-gameplay-guide?utm_source=web&utm_medium=web&utm_campaign=tft-microsite-2019#patch-quick-champion-reference')
+
+    soup = BeautifulSoup(r.text, features="html.parser")
+
+    divs = soup.find_all("div", {'class': 'tft-icon-container'})
+
+    for div in divs:
+        r = requests.get(div.img.get('src'))
+        with open('images/icons/' + div.text.strip() + '-icon.png', 'wb') as f:
+            f.write(r.content)
+
 if __name__ == '__main__':
     with open('raw.html', 'r', encoding="utf-8") as f:
         html = f.read()
@@ -96,7 +109,10 @@ if __name__ == '__main__':
     # downloadImages(soup)
 
     # generate syngergies
-    # generateSynergies(soup)
+    generateSynergies(soup)
 
     # generating champ - origin - class associations
-    generateChampJson(soup)
+    # generateChampJson(soup)
+
+    # generate synergy images
+    # downloadSynergyImages()

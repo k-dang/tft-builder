@@ -8,11 +8,11 @@ const ChampGroup = props => {
     <div className={champgroupStyles.container}>
       <span>{props.name}</span>
       <div className={champgroupStyles.champGroupContainer}>
-        {props.champs.map(({ node }) => (
+        {props.champs.map(({ node }, i) => (
           <div
-            key={node.id}
+            key={i}
             className={champgroupStyles.champImage}
-            onClick={e => props.addChamp(node)}
+            onClick={e => props.clickEvent(node)}
           >
             <Image src={node.name + ".png"}></Image>
           </div>
@@ -25,7 +25,7 @@ const ChampGroup = props => {
 Image.propTypes = {
   name: PropTypes.string,
   champs: PropTypes.array,
-  addChamp: PropTypes.func,
+  clickEvent: PropTypes.func,
 }
 
 export default ChampGroup

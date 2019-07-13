@@ -17,3 +17,33 @@
 .buffGroups {
   flex: 1;
 }
+
+.fixedGroup {
+  position: fixed;
+}
+
+.buffGroup,
+.pbuffGroup {
+  margin: 0.3rem 0;
+}
+
+.pbuffGroup {
+  opacity: 0.2;
+}
+
+.buffDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.buffName {
+  margin-left: 0.5rem;
+}
+
+.buffIcons {
+  width: 28px;
+}
+
+.desc {
+  font-size: 14px;
+}
