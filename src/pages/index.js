@@ -7,7 +7,7 @@ import ChampBuilder from "../components/champbuilder"
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="TFT Builder" />
       <ChampBuilder></ChampBuilder>
     </Layout>
   )

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `TFT Builder`,
-    description: `Build out your tft tema comps`,
+    description: `Build out your tft team comps`,
     author: `Kevin Dang`,
   },
   plugins: [
@@ -33,6 +33,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `static/upside-down-smiley.svg`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-55175523-4",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
