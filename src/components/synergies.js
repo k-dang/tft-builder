@@ -9,7 +9,7 @@ export const synergies = {
       2: "60%",
       3: "80%",
     },
-    icon: "Demon-icon.png",
+    icon: "Demon_TFT_icon.png",
   },
   Dragon: {
     min: "2",
@@ -19,7 +19,7 @@ export const synergies = {
     ranks: {
       1: "100%",
     },
-    icon: "Dragon-icon.png",
+    icon: "Dragon_TFT_icon.png",
   },
   Exile: {
     min: "1",
@@ -29,7 +29,7 @@ export const synergies = {
     ranks: {
       1: "100%",
     },
-    icon: "Exile-icon.png",
+    icon: "Exile_TFT_icon.png",
   },
   Glacial: {
     min: "2",
@@ -40,7 +40,7 @@ export const synergies = {
       2: "30%",
       3: "45%",
     },
-    icon: "Glacial-icon.png",
+    icon: "Glacial_TFT_icon.png",
   },
   Imperial: {
     min: "2",
@@ -50,16 +50,16 @@ export const synergies = {
       1: "20%",
       2: "30%",
     },
-    icon: "Imperial-icon.png",
+    icon: "Imperial_TFT_icon.png",
   },
   Ninja: {
     min: "1",
     max: "4",
     desc: "Ninjas get attack damage",
     ranks: {
-      1: "40%"
+      1: "40%",
     },
-    icon: "Ninja-icon.png",
+    icon: "Ninja_TFT_icon.png",
   },
   Noble: {
     min: "3",
@@ -68,9 +68,9 @@ export const synergies = {
       "Grants 100 armor and basic attacks restore 35 health on-hit to the following:",
     ranks: {
       1: "40%",
-      2: "80%"
+      2: "80%",
     },
-    icon: "Noble-icon.png",
+    icon: "Noble_TFT_icon.png",
   },
   Phantom: {
     min: "2",
@@ -80,7 +80,7 @@ export const synergies = {
     ranks: {
       1: "40%",
     },
-    icon: "Phantom-icon.png",
+    icon: "Phantom_TFT_icon.png",
   },
   Pirate: {
     min: "3",
@@ -90,7 +90,7 @@ export const synergies = {
     ranks: {
       1: "40%",
     },
-    icon: "Pirate-icon.png",
+    icon: "Pirate_TFT_icon.png",
   },
   Robot: {
     min: "1",
@@ -99,7 +99,7 @@ export const synergies = {
     ranks: {
       1: "40%",
     },
-    icon: "Robot-icon.png",
+    icon: "Robot_TFT_icon.png",
   },
   Void: {
     min: "3",
@@ -109,7 +109,7 @@ export const synergies = {
     ranks: {
       1: "40%",
     },
-    icon: "Void-icon.png",
+    icon: "Void_TFT_icon.png",
   },
   Wild: {
     min: "2",
@@ -118,9 +118,9 @@ export const synergies = {
       "Wildlings generate Fury on-hit, up to 5. Each stack gives 7% attack speed.",
     ranks: {
       1: "40%",
-      2: "80%"
+      2: "80%",
     },
-    icon: "Wild-icon.png",
+    icon: "Wild_TFT_icon.png",
   },
   Yordle: {
     min: "3",
@@ -128,9 +128,9 @@ export const synergies = {
     desc: "Yordles have a chance to \u00a0dodge enemy attacks.",
     ranks: {
       1: "40%",
-      2: "80%"
+      2: "80%",
     },
-    icon: "Yordle-icon.png",
+    icon: "Yordle_TFT_icon.png",
   },
   Assassin: {
     min: "3",
@@ -139,29 +139,31 @@ export const synergies = {
       "Passive: At the start of combat, Assassins stealth for a short duration and jump behind the farthest enemy.Synergy: Assassins have bonus critical strike damage:",
     ranks: {
       1: "150%",
-      2: "300%"
+      2: "300%",
     },
-    icon: "Assassin-icon.png",
+    icon: "Assassin_TFT_icon.png",
   },
   Blademaster: {
     min: "3",
-    max: "6",
+    max: "9",
     desc: "Blademasters have a 45% chance to perform a multi-attack.",
     ranks: {
       1: "150%",
-      2: "300%"
+      2: "300%",
+      3: "4",
     },
-    icon: "Blademaster-icon.png",
+    icon: "Blademaster_TFT_icon.png",
   },
   Brawler: {
     min: "2",
-    max: "4",
+    max: "6",
     desc: "Brawlers gain additional maximum health.",
     ranks: {
       1: "150%",
-      2: "300%"
+      2: "300%",
+      3: "1200",
     },
-    icon: "Brawler-icon.png",
+    icon: "Brawler_TFT_icon.png",
   },
   Elementalist: {
     min: "3",
@@ -171,7 +173,7 @@ export const synergies = {
     ranks: {
       1: "150%",
     },
-    icon: "Elementalist-icon.png",
+    icon: "Elementalist_TFT_icon.png",
   },
   Guardian: {
     min: "2",
@@ -181,18 +183,19 @@ export const synergies = {
     ranks: {
       1: "150%",
     },
-    icon: "Guardian-icon.png",
+    icon: "Guardian_TFT_icon.png",
   },
   Gunslinger: {
     min: "2",
-    max: "4",
+    max: "6",
     desc:
       "Gunslingers have a 50% chance for their attacks to hit additional enemies.",
     ranks: {
       1: "150%",
       2: "150%",
+      3: "300%",
     },
-    icon: "Gunslinger-icon.png",
+    icon: "Gunslinger_TFT_icon.png",
   },
   Knight: {
     min: "2",
@@ -203,7 +206,7 @@ export const synergies = {
       2: "30%",
       3: "45%",
     },
-    icon: "Knight-icon.png",
+    icon: "Knight_TFT_icon.png",
   },
   Ranger: {
     min: "2",
@@ -214,7 +217,7 @@ export const synergies = {
       1: "20%",
       2: "30%",
     },
-    icon: "Ranger-icon.png",
+    icon: "Ranger_TFT_icon.png",
   },
   Shapeshifter: {
     min: "3",
@@ -224,7 +227,7 @@ export const synergies = {
     ranks: {
       1: "20%",
     },
-    icon: "Shapeshifter-icon.png",
+    icon: "Shapeshifter_TFT_icon.png",
   },
   Sorcerer: {
     min: "3",
@@ -235,6 +238,17 @@ export const synergies = {
       1: "20%",
       2: "30%",
     },
-    icon: "Sorcerer-icon.png",
+    icon: "Sorcerer_TFT_icon.png",
+  },
+  Hextech: {
+    min: "2",
+    max: "4",
+    desc:
+      "At the start of combat, the ally team launches and detonates a pulse bomb, temporarily disabling nearby enemy items for 8 seconds.",
+    ranks: {
+      1: "1",
+      2: "2",
+    },
+    icon: "Hextech_TFT_icon.png",
   },
 }

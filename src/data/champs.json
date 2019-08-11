@@ -90,6 +90,16 @@
         ]
     },
     {
+        "name": "Camille",
+        "tier": "1",
+        "origin": [
+            "Hextech"
+        ],
+        "class": [
+            "Blademaster"
+        ]
+    },
+    {
         "name": "Cho'Gath",
         "tier": "4",
         "origin": [
@@ -121,7 +131,7 @@
     },
     {
         "name": "Elise",
-        "tier": "2",
+        "tier": "1",
         "origin": [
             "Demon"
         ],
@@ -186,6 +196,26 @@
         "tier": "1",
         "origin": [
             "Pirate"
+        ],
+        "class": [
+            "Gunslinger"
+        ]
+    },
+    {
+        "name": "Jayce",
+        "tier": "2",
+        "origin": [
+            "Hextech"
+        ],
+        "class": [
+            "Shapeshifter"
+        ]
+    },
+    {
+        "name": "Jinx",
+        "tier": "4",
+        "origin": [
+            "Hextech"
         ],
         "class": [
             "Gunslinger"
@@ -471,6 +501,16 @@
         ],
         "class": [
             "Sorcerer"
+        ]
+    },
+    {
+        "name": "Vi",
+        "tier": "3",
+        "origin": [
+            "Hextech"
+        ],
+        "class": [
+            "Brawler"
         ]
     },
     {

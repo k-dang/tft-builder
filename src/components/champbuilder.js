@@ -31,6 +31,7 @@ const ChampBuilder = () => {
     "Dragon",
     "Exile",
     "Glacial",
+    "Hextech",
     "Imperial",
     "Ninja",
     "Noble",

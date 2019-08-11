@@ -4,24 +4,22 @@ from bs4 import BeautifulSoup
 import requests
 import json
 
-url = "https://leagueoflegends.fandom.com/wiki/Teamfight_Tactics:Champions"
+# url = "https://leagueoflegends.fandom.com/wiki/Teamfight_Tactics:Champions"
+# item_url = "https://leagueoflegends.fandom.com/wiki/Teamfight_Tactics:Items"
 
 # driver = webdriver.Chrome("C:\\Users\\Kevin\\Downloads\\chromedriver_win32\\chromedriver.exe")
 # driver.get(url)
 
-# with open('raw.html', 'w', encoding="utf-8") as f:
+# with open('raw_item.html', 'w', encoding="utf-8") as f:
 #     f.write(driver.page_source)
 
 def downloadImages(soup):
-    tables = soup.find_all("table", {"class": "article-table"})
     # should interate over all tables rather than just [0]
-    tabbertab = soup.find_all("div", {"class": "tabbertab"})
-    new_tables = tabbertab[0].find_all("table", {"class": "article-table"})
+    tables = soup.find_all("table", {"style": "display:inline-table; text-align:center; width:47%;"})
 
-    for table in new_tables:
+    for table in tables:
         champ_row = table.find_all("tr")[2]
-        champion_spans = champ_row.find_all("span", {"class": "tft-icon tooltips-init-complete"})
-
+        champion_spans = champ_row.find_all("span", {"class": "tft-icon"})
         for cps in champion_spans:
             r = requests.get(cps.img.get('data-src'))
             with open('images/' + cps.get('data-param') + '.png', 'wb') as f:
@@ -55,15 +53,14 @@ def generateSynergies(soup):
     #     print(od)
 
 def generateChampJson(soup):
-    champ_table = soup.find_all("table", {"class": "sortable article-table sticky-header jquery-tablesorter"})
-    tbody = champ_table[0].find_all("tbody")
-    trs = tbody[0].find_all("tr")
-    tds = trs[0].find_all("td")
+    champ_table = soup.find_all("table", {"class": "sortable article-table sticky-header"})
+    trs = champ_table[0].find_all("tr")
+    trs.pop(0)
     champs = []
     for tr in trs:
         tds = tr.find_all("td")
         origins = []
-        origins_spans = tds[2].find_all("span", {"class": "tft-icon tooltips-init-complete"})
+        origins_spans = tds[2].find_all("span", {"class": "tft-icon"})
         if (len(origins_spans) > 1):
             for os in origins_spans:
                 origins.append(os.get('data-param'))
@@ -71,7 +68,7 @@ def generateChampJson(soup):
             origins = [tds[2].get('data-sort-value')]
 
         classes = []
-        classes_spans = tds[3].find_all("span", {"class": "tft-icon tooltips-init-complete"})
+        classes_spans = tds[3].find_all("span", {"class": "tft-icon"})
         if (len(classes_spans) > 1):
             for cs in classes_spans:
                 classes.append(cs.get('data-param'))
@@ -100,6 +97,41 @@ def downloadSynergyImages():
         with open('images/icons/' + div.text.strip() + '-icon.png', 'wb') as f:
             f.write(r.content)
 
+def downloadItemImages(soup):
+    item_table = soup.find_all("table", {"class": "article-table hover-row hover-column"})
+    
+    item_rows = item_table[0].find_all("tr")
+
+    items = item_rows[0].find_all("th")
+
+    for td in item_rows[1].find_all("td"):
+        print(td)
+        break
+
+    # for items in item_rows:
+    #     it = items.find_all("td")
+    #     for item in it:
+    #         itd = item.find_all("span")
+    #         print(item)
+    #         break
+            # print(item.span.get('data-param'))
+            # r = requests.get(item.img.get('src'))
+            # with open('images/items/' + item.span.get('data-param') + '.png', 'wb') as f:
+            #     f.write(r.content)
+
+def downloadImagesSinglePage(soup):
+    table = soup.find_all("table", {"class": "navbox"})
+    trs = table[0].find_all("tr")
+
+    for i in range(1, 3):
+        td = trs[i].find_all("td")[0]
+        spans = td.find_all("span", {"class": "tft-icon"})
+        for sp in spans:
+            r = requests.get(sp.img.get('data-src'))
+            with open('images/icons/' + sp.img.get('data-image-key'), 'wb') as f:
+                f.write(r.content)
+        # break
+
 if __name__ == '__main__':
     with open('raw.html', 'r', encoding="utf-8") as f:
         html = f.read()
@@ -109,10 +141,25 @@ if __name__ == '__main__':
     # downloadImages(soup)
 
     # generate syngergies
-    generateSynergies(soup)
+    # generateSynergies(soup)
 
     # generating champ - origin - class associations
     # generateChampJson(soup)
 
     # generate synergy images
     # downloadSynergyImages()
+
+    # with open('raw_item.html', 'r', encoding="utf-8") as f:
+    #     html = f.read()
+
+    # soup = BeautifulSoup(html, features="html.parser")
+
+    ## download item images
+    # downloadItemImages(soup)
+
+    # single page image downloads
+    with open('better_raw.html', 'r', encoding="utf-8") as f:
+        html = f.read()
+
+    soup = BeautifulSoup(html, features="html.parser")
+    downloadImagesSinglePage(soup)
